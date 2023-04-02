@@ -1,11 +1,11 @@
 class Solution {
     public int solution(int[] sides) {
-        int bigValue = Math.max(sides[0], sides[1]);
-        int smallValue = Math.min(sides[0], sides[1]);
+        int answer = 0;
+        int max = Math.max(sides[0], sides[1]);
+        int min = Math.min(sides[0], sides[1]);
 
-        int lowLimit = bigValue - smallValue;
-        int highLimit = bigValue + smallValue;
+        answer += min * 2 - 1;
 
-        return highLimit - lowLimit - 1;
+        return answer;
     }
 }
