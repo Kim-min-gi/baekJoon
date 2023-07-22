@@ -4,7 +4,7 @@ class Solution {
         for(int i=0; i<numbers.length; i++){
             sum += numbers[i];
         }
-        double answer = (double)sum / numbers.length;
-        return answer;
+        
+        return (double)sum / numbers.length;
     }
 }
