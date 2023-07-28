@@ -1,9 +1,10 @@
 class Solution {
     public String solution(String my_string, int n) {
-        String answer = "";
-        for(int i =0; i<n; i++){
-          answer += my_string.charAt(my_string.length() - n + i);
-        }
+        String answer = my_string.substring(my_string.length() - n);
+        // for(int i =0; i<n; i++){
+        //   answer += my_string.charAt(my_string.length() - n + i);
+        // }
+        
         return answer;
     }
 }
