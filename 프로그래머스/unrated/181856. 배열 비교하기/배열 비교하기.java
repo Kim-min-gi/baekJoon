@@ -9,12 +9,16 @@ class Solution {
         }else{
             int arr1Sum = 0;
             int arr2Sum = 0;
-            for(int i : arr1){
-                arr1Sum += i;
-            }
+//             for(int i : arr1){
+//                 arr1Sum += i;
+//             }
             
-            for(int j : arr2){
-                arr2Sum += j;
+//             for(int j : arr2){
+//                 arr2Sum += j;
+//             }
+            for(int i = 0; i<arr1Length; i++){
+                arr1Sum += arr1[i];
+                arr2Sum += arr2[i];
             }
             
             if(arr1Sum == arr2Sum){
