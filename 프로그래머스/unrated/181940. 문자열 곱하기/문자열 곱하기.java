@@ -4,6 +4,8 @@ class Solution {
         for(int i=0; i<k; i++){
             answer += my_string;
         }
+        
+        //return my_string.repeat(k);
         return answer;
     }
 }
