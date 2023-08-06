@@ -1,10 +1,10 @@
 class Solution {
     public int solution(String myString, String pat) {
         int answer = 0;
-        String loser_myString = myString.toLowerCase();
-        String loser_pat = pat.toLowerCase();
+        String lower_myString = myString.toLowerCase();
+        String lower_pat = pat.toLowerCase();
         
-        if(loser_myString.contains(loser_pat)){
+        if(lower_myString.contains(lower_pat)){
             answer = 1;
         };
         
