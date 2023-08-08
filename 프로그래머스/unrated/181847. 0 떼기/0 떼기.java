@@ -12,7 +12,7 @@ class Solution {
         for(int i = index; i<n_str.length(); i++){
             answer += n_str.charAt(i);
         }
-        
+        //return ""+Integer.parseInt(n_str);
         return answer;
     }
 }
