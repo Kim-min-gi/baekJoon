@@ -5,7 +5,7 @@ class Solution {
         String answer = "";
         BigInteger aToInt = new BigInteger(a);
         BigInteger bToInt = new BigInteger(b);
-        answer = String.valueOf(aToInt.add(bToInt));
+        answer += aToInt.add(bToInt);
         
         return answer;
     }
