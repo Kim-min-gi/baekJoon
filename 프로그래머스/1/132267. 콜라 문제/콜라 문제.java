@@ -4,11 +4,10 @@ class Solution {
         int temp = 0;
         
         while(true){
-            
             if(n < a) break;
             
             temp = (n / a) * b;
-            n = n - ((n / a) * a) + temp;
+            n = n % a + temp;
             answer += temp;
         }
         
