@@ -7,10 +7,6 @@ class Solution {
             answer++;
             int resultCnt = Integer.bitCount(answer);
             if(nCnt == resultCnt) break;
-            // String resultBinary = Integer.toBinaryString(answer).replaceAll("0","");
-            // if(resultBinary.equals(nBinary)){
-            //     break;
-            // }
 
         }
         
