@@ -9,28 +9,27 @@ public class Main{
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int[] arrA = new int[N];
-        Integer[] arrB = new Integer[N];
+        ArrayList<Integer> arrA = new ArrayList<>();
+        ArrayList<Integer> arrB = new ArrayList<>();
         StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st2 = new StringTokenizer(br.readLine());
         int sum = 0;
 
         for (int i =0; i<N; i++){
-            int num = Integer.parseInt(st.nextToken());
-            arrA[i] = num;
+            int numA = Integer.parseInt(st.nextToken());
+            int numB = Integer.parseInt(st2.nextToken());
+            arrA.add(numA);
+            arrB.add(numB);
         }
-
-        Arrays.sort(arrA);
-        st = new StringTokenizer(br.readLine());
-
-        for (int i =0; i<N; i++){
-            int num = Integer.parseInt(st.nextToken());
-            arrB[i] = num;
-        }
-
-        Arrays.sort(arrB , Collections.reverseOrder());
 
         for (int i = 0; i<N; i++){
-            sum += arrA[i] * arrB[i];
+            int min = Collections.min(arrA);
+            int max = Collections.max(arrB);
+
+            sum += min * max;
+
+            arrA.remove(Integer.valueOf(min));
+            arrB.remove(Integer.valueOf(max));
         }
 
         System.out.println(sum);
