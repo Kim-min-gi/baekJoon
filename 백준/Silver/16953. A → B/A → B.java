@@ -5,36 +5,39 @@ import java.util.*;
 
 
 public class Main{
-    static long a,b;
-    static int count = 0;
-    static boolean check;
-
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        a = Integer.parseInt(st.nextToken());
-        b = Integer.parseInt(st.nextToken());
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+        int count = 1;
 
+        while (a != b){
 
-
-        dfs(a,1);
-        if (check) System.out.println(count);
-        else System.out.println(-1);
-
-    }
-
-    public static void dfs(long num, int cnt){
-            if (num > b) return;
-
-            if (num == b){
-                count = cnt;
-                check = true;
+            if (a > b){
+                System.out.println(-1);
                 return;
             }
 
-            dfs(num*2, cnt + 1);
-            dfs(num*10+1, cnt + 1);
+            if (b % 10 == 1){
+                b /= 10;
+            }else if (b % 2 == 0){
+                b /= 2;
+            }else{
+                System.out.println(-1);
+                return;
+            }
+
+            count++;
+
+
+        }
+
+        System.out.println(count);
 
     }
+
+
 
 }
