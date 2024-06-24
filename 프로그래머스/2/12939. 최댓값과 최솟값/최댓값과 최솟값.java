@@ -1,19 +1,24 @@
 import java.util.*;
 class Solution {
     public String solution(String s) {
-        String[] list = s.split(" ");
-        int max , min;
-        max = min = Integer.parseInt(list[0]);
-        
-        for(int i=1; i<list.length; i++){
-          max = Math.max(max,Integer.parseInt(list[i]));
-          min = Math.min(min,Integer.parseInt(list[i]));
+        String answer = "";
+        String[] sArr = s.split(" ");
+        int max = Integer.parseInt(sArr[0]);
+        int min = Integer.parseInt(sArr[0]);
+
+        for (String num : sArr){
+            if (max < Integer.parseInt(num)){
+                max = Integer.parseInt(num);
+            }
+
+            if (min > Integer.parseInt(num)){
+                min = Integer.parseInt(num);
+            }
         }
+
         
-        
-        String answer = "" + min + " " + max;
-        
-        
+
+        answer = min + " " + max;
         
         return answer;
     }
