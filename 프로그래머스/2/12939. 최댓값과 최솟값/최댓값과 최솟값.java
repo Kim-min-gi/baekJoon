@@ -1,25 +1,15 @@
 import java.util.*;
 class Solution {
     public String solution(String s) {
-        String answer = "";
-        String[] sArr = s.split(" ");
-        int max = Integer.parseInt(sArr[0]);
-        int min = Integer.parseInt(sArr[0]);
+        String[] arr = s.split(" ");
+        int[] numArr = new int[arr.length];
 
-        for (String num : sArr){
-            if (max < Integer.parseInt(num)){
-                max = Integer.parseInt(num);
-            }
-
-            if (min > Integer.parseInt(num)){
-                min = Integer.parseInt(num);
-            }
+        for (int i =0; i<numArr.length; i++){
+            numArr[i] = Integer.parseInt(arr[i]);
         }
 
+        Arrays.sort(numArr);
         
-
-        answer = min + " " + max;
-        
-        return answer;
+        return numArr[0] + " " + numArr[numArr.length-1];
     }
 }
