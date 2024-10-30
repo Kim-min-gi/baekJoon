@@ -2,11 +2,8 @@ class Solution {
     public int solution(String s) {
         int answer = 0;
        
-        answer = Integer.parseInt(s.replace("-",""));
+        answer = Integer.parseInt(s);
 
-        if (s.charAt(0) == '-'){
-           answer *= -1;
-        }
         
         return answer;
     }
