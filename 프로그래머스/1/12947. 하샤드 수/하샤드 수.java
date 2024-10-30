@@ -1,15 +1,17 @@
 class Solution {
     public boolean solution(int x) {
-      String s = x + "";
-      String[] sArr = s.split("");
-      int sum = 0;
         
-      for(int i =0; i<sArr.length; i++){
-          sum += Integer.parseInt(sArr[i]);
-      }
+        boolean answer;
+        int temp = x;
+        int sum = 0;
+
+        while (x>0){
+          sum += x % 10;
+          x /= 10;
+        }
         
-      if(x % sum == 0) return true;  
-        return false;
-      
+        answer = temp % sum == 0;
+        
+        return answer;
     }
 }
