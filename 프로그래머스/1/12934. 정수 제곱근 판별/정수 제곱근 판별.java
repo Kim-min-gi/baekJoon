@@ -1,11 +1,16 @@
 class Solution {
     public long solution(long n) {
-        long x = (long) Math.sqrt(n);
-        long result = (long) Math.pow(x,2);
+        long answer = 0;
         
-        if(result == n) return (long) Math.pow(x+1,2);
-        else return -1;
+        double x = Math.sqrt(n);
+
+        if(x % 1 == 0.0) {
+            answer = (long) Math.pow(x + 1, 2);
+        }else{
+            answer = -1;
+        }
         
         
+        return answer;
     }
 }
