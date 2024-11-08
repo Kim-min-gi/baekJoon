@@ -1,15 +1,17 @@
 class Solution {
     public long solution(int a, int b) {
-       long x = 0L;
+        long answer = 0;
         
         int max = Math.max(a,b);
         int min = Math.min(a,b);
-        
-        for(long i =min; i<=max; i++){
-            x += i;
+
+
+        while (min <= max){
+            answer += min;
+            min++;
         }
         
-        return x;
         
+        return answer;
     }
 }
