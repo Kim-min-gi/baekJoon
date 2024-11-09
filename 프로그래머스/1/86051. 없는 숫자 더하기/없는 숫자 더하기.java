@@ -1,17 +1,17 @@
 class Solution {
     public int solution(int[] numbers) {
-        int[] arr = new int[10];
-        int sum = 0;
+        int answer = 0;
+        boolean[] check = new boolean[10];
         
-        for(int i =0; i<numbers.length; i++){
-            arr[numbers[i]] = 1;
+        for (int num : numbers){
+            check[num] = true;
+        }
+
+
+        for (int i =0; i<check.length; i++){
+            if (!check[i]) answer += i;
         }
         
-        for(int i =0; i<arr.length; i++){
-            if(arr[i] == 0) sum += i;
-        }
-        
-        return sum;
-        
+        return answer;
     }
 }
