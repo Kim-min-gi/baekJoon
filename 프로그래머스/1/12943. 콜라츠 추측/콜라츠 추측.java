@@ -1,28 +1,23 @@
 class Solution {
     public int solution(int num) {
-        int answer = 0;
-        long result = num;
+         int answer = 0;
+         long number = num;
         
-        while(result != 1){
-            
-            if(answer == 500) {
+         while (number != 1){
+            answer++;
+             
+            if (answer == 500) {
                 answer = -1;
                 break;
-            }
-            
-            
-            if(result % 2 == 0){
-                result /= 2;
-            }else{
-                result = result * 3 + 1;
-            }
-            
-            answer++;
-            
-        }
+            } 
 
+            if (number % 2 == 0) number /= 2;
+            else number = number * 3 + 1;
+
+        }
+        
+        
+        
         return answer;
-        
-        
     }
 }
