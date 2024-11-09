@@ -1,16 +1,14 @@
+import java.util.*;
+
 class Solution {
-    public String solution(String[] seoul) {
+    public String solution(String[] seoul) {       
+        int index = 0;
         
-        int count = 0;
-        
-        for(String s : seoul){
-            if(s.equals("Kim")) break;
-            count++;
+        for (String s : seoul){
+            if (!s.equals("Kim")) index++;
+            else break;
         }
         
-        String answer = "김서방은 "+ count + "에 있다";
-        
-        return answer;
-        
+        return "김서방은 "+index+"에 있다";
     }
 }
