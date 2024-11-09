@@ -2,16 +2,14 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] arr, int divisor) {
         List<Integer> list = new ArrayList<>();
-        Arrays.sort(arr);
         
-        for(int i : arr){
-            if(i % divisor == 0){
-                list.add(i);
-            }
+        for(int num : arr){
+            if(num % divisor == 0) list.add(num);
         }
+
+        int[] answer = list.isEmpty() ? new int[]{-1} : list.stream().mapToInt(i -> i).sorted().toArray();
         
-        if(list.isEmpty()) list.add(-1);
         
-        return list.stream().mapToInt(j->j).toArray();
+        return answer;
     }
 }
