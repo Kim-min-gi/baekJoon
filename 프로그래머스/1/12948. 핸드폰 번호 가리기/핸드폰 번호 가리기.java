@@ -1,14 +1,15 @@
 class Solution {
     public String solution(String phone_number) {
-        String fourNumber = phone_number.substring(phone_number.length()-4);
-        StringBuilder sb = new StringBuilder();
+    
+        String usingNumber = phone_number.substring(phone_number.length()-4);
 
-        for (int i =0; i<phone_number.length()-4; i++){
-            sb.append("*");
-        }
+        String text = phone_number.substring(0,phone_number.length()-4);
 
-        sb.append(fourNumber);
+        text = text.replaceAll("[0-9]","*");
+
+        StringBuilder answer = new StringBuilder();
+        answer.append(text).append(usingNumber);
         
-        return sb.toString();
+        return answer.toString();
     }
 }
