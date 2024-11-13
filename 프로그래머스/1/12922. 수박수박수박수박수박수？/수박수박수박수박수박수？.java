@@ -1,17 +1,13 @@
 class Solution {
     public String solution(int n) {
-        String s = "수박";
-        String answer = "";
+       
+        StringBuilder sb = new StringBuilder();
         
-        for(int i =0; i<n; i+=2){
-            answer += s;
+        for (int i =1; i<=n; i++){
+            if (i % 2 != 0) sb.append("수");
+            else sb.append("박");
         }
         
-        if(n % 2 != 0){
-            answer = answer.substring(0,answer.length() - 1);
-        }
-        
-        return answer;
-        
+        return sb.toString();
     }
 }
