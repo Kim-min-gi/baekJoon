@@ -1,19 +1,15 @@
 class Solution {
     public long solution(int price, int money, int count) {
-        long sum = 0;
-        long answer = 0;
+      long sum = 0;
         
-        for(int i =1; i<=count; i++){
-            sum += (long) price * i;
-        }
+      for (int i =1; i<=count; i++){
+          sum += price * i;
+      }
         
-        answer = money - sum;
+      long answer = sum - money;
+      
+      if (answer < 0) answer = 0;
         
-        if(answer < 0) answer = (long) Math.abs(answer);
-        else answer = 0;
-        
-        
-        return answer;
-        
+      return answer;
     }
 }
