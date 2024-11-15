@@ -1,15 +1,18 @@
 class Solution {
     public int solution(String t, String p) {
-       	int length = p.length();
-		long num = Long.parseLong(p);
-		int result = 0;
+        long pNumber = Long.parseLong(p);
+        int count = 0;
 
-         for (int i = 0; i <= t.length() - length; i++) {
-            long tValue = Long.parseLong(t.substring(i, i + length));
-            if (tValue <= num)
-                result++;
+        for (int i =0; i<= t.length() - p.length(); i++){
+
+            String substring = t.substring(i, i + p.length());
+            long tNumber = Long.parseLong(substring);
+
+            if (tNumber <= pNumber) count++;
+
         }
         
-		return result;
+        
+        return count;
     }
 }
