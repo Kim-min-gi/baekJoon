@@ -1,29 +1,15 @@
-import java.util.*;
+import java.io.*;
+
 class Solution {
     public String solution(String s) {
-        String[] list = s.toLowerCase().split("");
-        StringBuilder sb = new StringBuilder();
-        boolean flag = true;
         
-        for(int i =0; i<list.length; i++){
-            
-            if(flag == true){
-                sb.append(list[i].toUpperCase());
-            }else{
-                sb.append(list[i]);
-            }
-            
-            if(list[i].equals(" ")){
-                flag = true;
-            }else{
-                flag = false;
-            }
-            
-            
-        }
-        
+        String[] sArr = s.toLowerCase().split("");
+        sArr[0]= sArr[0].toUpperCase();
 
-        
-        return sb.toString();
+        for (int i = 1; i<sArr.length; i++){
+            if (sArr[i - 1].equals(" ")) sArr[i] = sArr[i].toUpperCase();
+        }
+
+        return String.join("",sArr);
     }
 }
