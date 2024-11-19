@@ -1,18 +1,21 @@
 import java.util.*;
+
 class Solution
 {
-   	 public static int solution(int []A, int []B)
-		    {
-		        int answer = 0;
-		        Arrays.sort(A);
-		        Arrays.sort(B);
-		        for(int i=0;i<A.length;i++) {
-		        	
-		        		answer=answer+(A[i]*B[A.length-i-1]);
-		        	
-		        }
-		        System.out.println(answer);
+    public int solution(int []A, int []B)
+    {
+        int answer = 0;
 
-		        return answer;
-		    }
+        Arrays.sort(A);
+        Arrays.sort(B);
+
+        for(int i = 0; i<A.length; i++){
+            long num = (long) A[i] * B[A.length - i - 1];
+
+            answer += (int) num;
+        }
+        
+
+        return answer;
+    }
 }
