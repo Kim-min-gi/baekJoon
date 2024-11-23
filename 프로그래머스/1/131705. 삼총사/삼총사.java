@@ -1,14 +1,14 @@
 class Solution {
     public int solution(int[] number) {
         int answer = 0;
-        
-        for(int a=0; a<number.length-2; a++){
-          for(int s=a+1; s<number.length-1; s++){
-              for(int d=s+1; d<number.length; d++){
-                  if(number[a] + number[s] + number[d] == 0) answer++;
-              }
-          }
-      }
+
+        for (int i =0; i<number.length-2; i++){
+            for (int j=i+1; j<number.length-1; j++){
+                for (int n= j+1; n<number.length; n++){
+                    if (number[i] + number[j] + number[n] == 0) answer++;
+                }
+            }
+        }
         
         return answer;
     }
