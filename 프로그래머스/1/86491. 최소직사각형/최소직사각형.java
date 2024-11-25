@@ -1,17 +1,21 @@
 class Solution {
     public int solution(int[][] sizes) {
-        int wMax = 0;
-        int hMax = 0;
-        
-        for(int[] arr : sizes){
-            int w = Math.max(arr[0],arr[1]);
-            int h = Math.min(arr[0],arr[1]);
-            
-            wMax = Math.max(wMax,w);
-            hMax = Math.max(hMax,h);
+    
+        int maxWidth = 0;
+        int minHeight = 0;
+
+        for (int[] a : sizes){
+
+            int width = Math.max(a[0],a[1]);
+            int height = Math.min(a[0],a[1]);
+
+            maxWidth = Math.max(maxWidth,width);
+            minHeight = Math.max(minHeight,height);
+
+
         }
         
-        return wMax * hMax;
         
+        return maxWidth * minHeight;
     }
 }
