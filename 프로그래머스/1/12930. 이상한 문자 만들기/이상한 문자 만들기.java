@@ -1,20 +1,27 @@
-import java.util.*;
 class Solution {
     public String solution(String s) {
-        String answer = s.toUpperCase();
+        
+        String[] sArr = s.toUpperCase().split("");
 
-        char[] sArr = answer.toCharArray();
+        int index = 0;
 
-        for (int i =1; i<sArr.length; i++){
-            if (65 <= sArr[i - 1] && sArr[i - 1] <= 90){
-                sArr[i] = Character.toLowerCase(sArr[i]);
+        for (int i =0; i<sArr.length; i++){
+
+            if (sArr[i].equals(" ")){
+
+                index = 0;
+
+            }else{
+
+                if (index % 2 !=0){
+                    sArr[i] = sArr[i].toLowerCase();
+                }
+
+                index++;
             }
+
         }
-
-
-        answer = String.valueOf(sArr);
-
-
-        return answer;
+        
+        return String.join("",sArr);
     }
 }
