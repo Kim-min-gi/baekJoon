@@ -1,37 +1,27 @@
-import java.util.*;
 class Solution {
     public String solution(String s, int n) {
-        char[] arr = s.toCharArray();
-        String answer = "";
-        
-        for(char c : arr){
-            
-            if(c == ' '){
-                answer += c;
+        StringBuilder sb = new StringBuilder();
+       
+        for (char c : s.toCharArray()){
+
+            if (c != ' ') {
+                int asc;
+
+                char base = Character.isLowerCase(c) ? 'a' : 'A';
+
+                int newPosition = (c- base + n) % 26;
+                char alp = (char) (base + newPosition);
+
+                sb.append(alp);
+
+            }else{
+                sb.append(" ");
             }
-            
-            if(c >= 'a' && c <= 'z'){
-                
-                if(c+n > 'z'){ 
-                    answer += (char)(c-26+n);
-                 }
-                else{ 
-                    answer += (char)(c+n);
-                 }
-                
-            }else if(c >= 'A' && c <= 'Z'){
-                
-                if(c+n > 'Z'){ 
-                    answer += (char)(c-26+n);
-                }
-                else{
-                    answer += (char)(c+n);
-                }
-                
-            }
-            
+
         }
         
-        return answer;
+        
+        
+        return sb.toString();
     }
 }
