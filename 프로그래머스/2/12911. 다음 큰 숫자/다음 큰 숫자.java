@@ -1,17 +1,13 @@
 class Solution {
     public int solution(int n) {
-        int answer = n;
-        int nCnt = Integer.bitCount(n);
+       int count = Integer.bitCount(n);
         
-        while(true){
-            answer++;
-            int resultCnt = Integer.bitCount(answer);
-            if(nCnt == resultCnt) break;
-
+        while (true){
+            n++;
+            if (count == Integer.bitCount(n)){
+                return n; 
+            }
         }
         
-        
-        
-        return answer;
-    }
+    }    
 }
