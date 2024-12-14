@@ -3,29 +3,19 @@ class Solution
 {
     public int solution(String s)
     {
-    
-         int answer = 0;
-
+       
         Stack<Character> stack = new Stack<>();
-
-
-
-        for (int i =0; i<s.length(); i++){
-            char c = s.charAt(i);
-
-            if (stack.isEmpty()){
-                stack.push(c);
-            }else if (stack.peek() == c){
+      
+        for(char word : s.toCharArray()){
+           
+            if(!stack.isEmpty() && word==stack.peek()){
                 stack.pop();
+           
             }else{
-                stack.push(c);
+                stack.push(word);
             }
-
         }
-
-
-        if (stack.isEmpty()) answer = 1;
-
-        return answer;
+      
+        return stack.size() > 0 ? 0 : 1;
     }
 }
