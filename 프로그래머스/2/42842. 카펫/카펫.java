@@ -1,28 +1,28 @@
+import java.util.*;
 
 class Solution {
-    public int[] solution(int brown, int yellow) {
-        int[] answer = new int[2];
-        int size = brown + yellow;
-        
-        for(int i =3; i<size; i++){
-            
-            int num = size / i;
-            
-            if(size % i == 0 && num >= 3){
-                int col = Math.max(i,num);
-                int row = Math.min(i,num);
-                
-                int center = (col-2) * (row-2);
-                
-                if(center == yellow){
-                    answer[0] = col;
-                    answer[1] = row;
-                    return answer;
-                }
+    public int[] solution(int brown, int red) {
+        int n = brown + red;
+        List<Integer> list = new ArrayList<Integer>();
+
+        for(int i = 2; i <= Math.sqrt(n); i++){
+            if(n % i == 0){
+                list.add(i);
+                int quotient = n/i;
+                if(i != quotient) list.add(quotient); 
             }
         }
-        
-        
-        return answer;
+
+        Collections.sort(list);
+
+        int col = 0;
+        int row = 0;
+
+        for(int i : list)
+            if((col = i) >= (row = (n/i))){
+                if((col + col + row - 2 + row - 2) == brown) break;
+            }
+
+        return new int[]{col, row};
     }
 }
