@@ -13,8 +13,6 @@ import java.util.*;
 public class Main {
 
     static int[][] arr = new int[7][7];
-    //    static int[] dx = {1, 0, 0, -1};  // 순서 조정
-//    static int[] dy = {0, 1, -1, 0};  // 순서 조정
     static int[] dx = {0,1,-1,0};
     static int[] dy = {1,0,0,-1};
     static int answer = 0;
@@ -54,12 +52,7 @@ public class Main {
         dfs(0,0);
 
         System.out.println(answer);
-//        for (int i = 0; i < 7; i++) {
-//            for (int j = 0; j < 7; j++) {
-//                System.out.print(arr[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
+
 
 
     }
