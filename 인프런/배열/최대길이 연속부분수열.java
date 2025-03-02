@@ -55,12 +55,6 @@ public class Main {
 
 
 
-//        int[] arr = new int[n];
-//
-//        st = new StringTokenizer(br.readLine());
-//        int index = 0;
-
-
         System.out.println(getAnswer(n,k,arr));
 
 

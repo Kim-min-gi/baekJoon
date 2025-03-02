@@ -51,15 +51,6 @@ public class Main {
             arr[i] = i+1;
         }
 
-
-//        int[] arr = new int[n];
-//
-//        st = new StringTokenizer(br.readLine());
-//        int index = 0;
-//        while (st.hasMoreTokens()){
-//            arr[index++] = Integer.parseInt(st.nextToken());
-//        }
-
         System.out.println(getAnswer(n,arr));
 
 
