@@ -2,17 +2,19 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] nums) {
-        int count = nums.length / 2;
-        HashSet<Integer> list = new HashSet<>(); 
-        
-        for(int num : nums){
-            list.add(num);
+        int answer = nums.length / 2;
+
+        // 중복제거하기
+        HashSet<Integer> numsSet = new HashSet<>();
+
+        for (int num : nums) {
+            numsSet.add(num);
         }
         
-        if(list.size() > count){
-            return count;
+        if (numsSet.size() < answer) {
+          answer = numsSet.size();
         }
         
-        return list.size();
+        return answer;
     }
 }
