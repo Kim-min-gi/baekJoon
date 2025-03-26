@@ -1,24 +1,35 @@
 import java.util.*;
+
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
-        List<Integer> list = new ArrayList<>();
+        Queue<Integer> que = new LinkedList<>();
+        ArrayList<Integer> answer = new ArrayList<>();
+        
+        
         for(int i =0; i<progresses.length; i++){
-            double d = (100 - progresses[i]) / (double) speeds[i];
-            int day = (int) Math.ceil(d);
-            
-            
-            int j = i + 1;
-            for(; j<progresses.length; j++){
-                if(progresses[j] + day * speeds[j] < 100){
-                    break;
-                }
+            if((100 - progresses[i]) % speeds[i] == 0){
+                que.offer((100 - progresses[i]) / speeds[i]);
+            }else{
+                que.offer(((100 - progresses[i]) / speeds[i]+1));
             }
-            
-            list.add(j - i);
-            i = j - 1;
-            
         }
-      
-        return list.stream().mapToInt(i -> i).toArray();
+                          
+        int now = que.poll();
+        int count = 1;                  
+                          
+        while(!que.isEmpty()){
+            if(now >= que.peek()){
+                count++;
+                que.poll();
+            }else{
+                answer.add(count);
+                now = que.poll();
+                count = 1;
+            }
+        }                  
+        answer.add(count);                  
+        
+        
+        return answer.stream().mapToInt(i -> i).toArray();
     }
 }
