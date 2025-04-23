@@ -1,25 +1,19 @@
 import java.util.*;
-
 class Solution {
     public String solution(int[] numbers) {
-        StringBuilder answer = new StringBuilder();
-        String[] arr = new String[numbers.length];
-        
-        for(int i=0; i<numbers.length; i++){
-            arr[i] = String.valueOf(numbers[i]);
+        String[] stringArray = Arrays.stream(numbers).mapToObj(String::valueOf)
+                .toArray(String[]::new);
+
+
+        Arrays.sort(stringArray,(a,b) -> (b+a).compareTo(a+b));
+
+        if (stringArray[0].equals("0")){
+            return "0";
         }
+
+        StringBuilder sb = new StringBuilder();
+        Arrays.stream(stringArray).forEach(sb::append);
         
-        
-        Arrays.sort(arr,(o1,o2) -> (o2+o1).compareTo(o1+o2));
-        
-        if (arr[0].equals("0")) {
-           return "0";
-        }
-        
-        for(String s : arr){
-            answer.append(s);
-        }
-        
-        return answer.toString();
+        return sb.toString();
     }
 }
